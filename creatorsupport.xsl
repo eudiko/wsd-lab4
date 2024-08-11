@@ -18,8 +18,16 @@
                     <tr>
                         <td><xsl:value-of select="cre:creator-id"/></td>
                         <td><xsl:value-of select="cre:creator-name"/></td>
-                        <td><xsl:value-of select="/cre:creators/cre:creator/cre:projects/cre:project/cre:project-name"/></td>
-                        <td><xsl:value-of select="/cre:creators/cre:creator/cre:projects/cre:project/cre:funding-goal"/></td>
+                        <td>
+                            <xsl:for-each select="cre:projects/cre:project">
+                                <div><xsl:value-of select="cre:project-name"/></div>
+                            </xsl:for-each>
+                        </td>
+                        <td>
+                            <xsl:for-each select="cre:projects/cre:project">
+                                <div><xsl:value-of select="cre:funding-goal"/></div>
+                            </xsl:for-each>
+                        </td>
                     </tr>
                     </xsl:for-each>
                 </table>
