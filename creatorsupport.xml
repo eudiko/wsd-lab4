@@ -6,41 +6,41 @@
 <creators xmlns="www.abc.com/creator-support">
     <creator id="C1">
         <creator-id>1</creator-id>
-        <creator-name>Jane Doe</creator-name>
+        <creator-name>Jon Doeson</creator-name>
         <projects>
             <project id="P1">
-                <project-name>Fantasy Art Collection</project-name>
-                <funding-goal>5000</funding-goal>
+                <project-name>Animated Short Film</project-name>
+                <funding-goal>250000</funding-goal>
             </project>
         </projects>
     </creator>
     <creator id="C2">
         <creator-id>2</creator-id>
-        <creator-name>John Smith</creator-name>
+        <creator-name>Jane Smiths</creator-name>
         <projects>
             <project id="P2">
-                <project-name>Ambient Music Album</project-name>
-                <funding-goal>3000</funding-goal>
+                <project-name>Coding Project Repository</project-name>
+                <funding-goal>30000</funding-goal>
             </project>
         </projects>
     </creator>
     <creator id="C3">
         <creator-id>3</creator-id>
-        <creator-name>Emily Davis</creator-name>
+        <creator-name>Jo Joseph</creator-name>
         <projects>
             <project id="P3">
-                <project-name>Tech Tutorial Series</project-name>
-                <funding-goal>2000</funding-goal>
+                <project-name>Fighting Game</project-name>
+                <funding-goal>300000</funding-goal>
             </project>
         </projects>
     </creator>
     <creator id="C4">
         <creator-id>4</creator-id>
-        <creator-name>Michael Brown</creator-name>
+        <creator-name>Michael Reef</creator-name>
         <projects>
             <project id="P4">
-                <project-name>Sci-Fi Novel Series</project-name>
-                <funding-goal>7000</funding-goal>
+                <project-name>Engineering Workshop</project-name>
+                <funding-goal>50000</funding-goal>
             </project>
         </projects>
     </creator>

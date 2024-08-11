@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Open Street View</title>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+        <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css" />
+        <style>
+            #map {
+                height: 100vh; /* Full height */
+                width: 100%; /* Full width */
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="map"></div>
+        
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+        <script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js"></script>
+        <script>
+            let map;
+            let marker;
+            let routeControl;
+            
+            function initializeMap(lat, lng) {
+                map = L.map("map").setView([lat, lng], 13);
+                L.tileLayer(
+                    "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                    {
+                        attribution:
+                            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                    }
+                ).addTo(map);
+                marker = L.marker([lat, lng])
+                    .addTo(map)
+                    .bindPopup("You are here!")
+                    .openPopup();
+                    if (routeControl) {
+                        routeControl.remove();
+                    }
+            }
+            
+            function updateMap(lat, lng) {
+                if (map && marker) {
+                    map.setView([lat, lng], 13);
+                    marker.setLatLng([lat, lng]).update();
+                    if (routeControl) {
+                        routeControl.remove();
+                    }
+                } else {
+                    initializeMap(lat, lng);
+                }
+            }
+            
+            function addRoute(startLat, startLng, endLat, endLng) {
+                if (routeControl) {
+                    routeControl.remove();
+                }
+                routeControl = L.Routing.control({
+                    waypoints: [
+                    L.latLng(startLat, startLng),
+                    L.latLng(endLat, endLng)
+                    ],
+                    routeWhileDragging: true
+                }).addTo(map);
+            }
+
+            // function getRandomLatLng() {
+            //     // Generate a random latitude and longitude
+            //     const randomLat = Math.random() * 180 - 90; // Latitude range: -90 to +90
+            //     const randomLng = Math.random() * 360 - 180; // Longitude range: -180 to +180
+            //     return { lat: randomLat, lng: randomLng };
+            // }
+            
+            function onLocationSuccess(pos) {
+                const coords = pos.coords;
+                updateMap(coords.latitude, coords.longitude);
+                
+                //const randomLocation = getRandomLatLng();
+                addRoute(coords.latitude, coords.longitude, 27.9881, 86.9250);
+            }
+            
+            function onLocationError(error) {
+                console.error("Error getting location: ", error);
+            }
+            
+            window.onload = function() {
+                navigator.geolocation.getCurrentPosition(onLocationSuccess, onLocationError);
+            };
+        </script>
+    </body>
+</html>
