@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT creators (creator+)>
+<!ELEMENT creator (creator-id, creator-name, bio, projects)>
+<!ELEMENT creator-id (#PCDATA)>
+<!ELEMENT creator-name (#PCDATA)>
+
+<!ELEMENT projects (project+)>
+<!ELEMENT project (project-name, funding-goal)>
+<!ELEMENT project-name (#PCDATA)>
+<!ELEMENT funding-goal (#PCDATA)>
+
+<!ATTLIST creator id ID #REQUIRED>
+<!ATTLIST project id ID #REQUIRED>
