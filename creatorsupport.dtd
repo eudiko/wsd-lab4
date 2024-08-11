@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!ELEMENT creators (creator+)>
-<!ELEMENT creator (creator-id, creator-name, bio, projects)>
+<!ELEMENT creator (creator-id, creator-name, projects)>
 <!ELEMENT creator-id (#PCDATA)>
 <!ELEMENT creator-name (#PCDATA)>
 
