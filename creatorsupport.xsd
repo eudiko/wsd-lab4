@@ -14,7 +14,7 @@
 
     <xs:complexType name="creatorType">
         <xs:sequence>
-            <xs:element name="creator-id" type="xs:integer"/>
+            <xs:element name="creator-id" type="cre:positiveid"/>
             <xs:element name="creator-name" type="xs:string"/>
             <xs:element name="projects" type="cre:projectsType"/>
         </xs:sequence>
@@ -29,10 +29,22 @@
 
     <xs:complexType name="projectType">
         <xs:sequence>
-            <xs:element name="project-name" type="xs:string"/>
+            <xs:element name="project-name" type="cre:projectNameType"/>
             <xs:element name="funding-goal" type="xs:decimal"/>
         </xs:sequence>
-        <xs:attribute name="id" type="xs:string" use="required"/>
     </xs:complexType>
+
+    <xs:simpleType name="positiveid">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="projectNameType">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50"/>
+        </xs:restriction>
+    </xs:simpleType>
+
 
 </xs:schema>

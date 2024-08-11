@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="creatorsupport.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <!-- <!DOCTYPE creators SYSTEM "creatorsupport.dtd"> -->
-<?xml-stylesheet type="text/xsl" href="creatorsupport.xsl"?>
+<?xml-stylesheet type="text/xsl" href="transform.xsl"?>
 
 <creators xmlns="www.abc.com/creator-support">
     <creator id="C1">
         <creator-id>1</creator-id>
         <creator-name>Jon Doeson</creator-name>
         <projects>
-            <project id="P1">
+            <project>
                 <project-name>Animated Short Film</project-name>
                 <funding-goal>250000</funding-goal>
             </project>
@@ -18,7 +18,7 @@
         <creator-id>2</creator-id>
         <creator-name>Jane Smiths</creator-name>
         <projects>
-            <project id="P2">
+            <project>
                 <project-name>Coding Project Repository</project-name>
                 <funding-goal>30000</funding-goal>
             </project>
@@ -28,7 +28,7 @@
         <creator-id>3</creator-id>
         <creator-name>Jo Joseph</creator-name>
         <projects>
-            <project id="P3">
+            <project>
                 <project-name>Fighting Game</project-name>
                 <funding-goal>300000</funding-goal>
             </project>
@@ -38,7 +38,7 @@
         <creator-id>4</creator-id>
         <creator-name>Michael Reef</creator-name>
         <projects>
-            <project id="P4">
+            <project>
                 <project-name>Engineering Workshop</project-name>
                 <funding-goal>50000</funding-goal>
             </project>
